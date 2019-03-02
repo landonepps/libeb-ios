@@ -6,9 +6,9 @@ Feel free to use the compiled framework in your own projects.
 
 ### Building
 
-To build library, run ./src/preconf.sh
-Compiled library will be located at ./src/build/libeb.a
-Move libeb.a to eb.framework/Versions/A/eb
+To build library, run `./src/preconf.sh`
+Compiled library will be located at `./src/build/libeb.a`
+Move `libeb.a` to `eb.framework/Versions/A/eb`
 
 ### Note
 
