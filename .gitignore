@@ -54,3 +54,4 @@ dkms.conf
 .deps/
 .libs/
 !eb.framework/
+config.log
