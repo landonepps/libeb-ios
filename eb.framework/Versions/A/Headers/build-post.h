@@ -40,7 +40,7 @@
  * Locale directory.
  */
 #ifndef WIN32
-#define EB_LOCALEDIR		"/opt/iphone-6.1-armv7/share/locale"
+#define EB_LOCALEDIR		"/usr/local/share/locale"
 #else
 #define EB_LOCALEDIR		localedir()
 #endif
