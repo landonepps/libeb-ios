@@ -12,7 +12,7 @@
  * 3. Neither the name of the project nor the names of its contributors
  *    may be used to endorse or promote products derived from this software
  *    without specific prior written permission.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE PROJECT AND CONTRIBUTORS ``AS IS'' AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -1214,6 +1214,15 @@ EB_Error_Code
 eb_bitmap_to_png(const char *bitmap, int width, int height, char *png,
     size_t *png_length)
 {
+	return eb_bitmap_to_png2(bitmap, width, height, png,
+							 png_length, PNG_FOREGROUND_COLOR);
+}
+
+
+EB_Error_Code
+eb_bitmap_to_png2(const char *bitmap, int width, int height, char *png,
+	size_t *png_length, unsigned int foreground_color)
+{
     EB_Error_Code error_code;
     char *png_p = png;
     char *idat_start;
@@ -1241,7 +1250,7 @@ eb_bitmap_to_png(const char *bitmap, int width, int height, char *png,
      * Set global colors.
      */
     RGB2CHARS(png_p + 41, PNG_BACKGROUND_COLOR);
-    RGB2CHARS(png_p + 44, PNG_FOREGROUND_COLOR);
+    RGB2CHARS(png_p + 44, foreground_color);
     crc = png_crc(png_p + 37, 10);
     INT2CHARS(png_p + 47, crc);
 
